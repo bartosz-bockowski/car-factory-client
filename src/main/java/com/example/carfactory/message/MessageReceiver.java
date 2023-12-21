@@ -1,6 +1,6 @@
 package com.example.carfactory.message;
 
-import com.example.carfactory.config.MessageConfig;
+import com.example.carfactory.config.Constants;
 import com.example.carfactory.domain.Order;
 import com.example.carfactory.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ public class MessageReceiver {
     @Scheduled(fixedDelay = 5000)
     public void receiver() {
         while (true) {
-            Object message = rabbitTemplate.receiveAndConvert(MessageConfig.CAR_PRODUCED_QUEUE);
+            Object message = rabbitTemplate.receiveAndConvert(Constants.CAR_PRODUCED_QUEUE);
             if (Objects.isNull(message)) {
                 break;
             }

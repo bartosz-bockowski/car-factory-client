@@ -3,10 +3,9 @@ package com.example.carfactory.command;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
-import java.io.Serializable;
 
 @Data
-public class OrderCommand implements Serializable {
+public class OrderCommand {
 
     @NotEmpty(message = "brand of the vehicle cannot be empty")
     private String brand;
